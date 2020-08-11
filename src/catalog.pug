@@ -1,0 +1,13 @@
+extends pug/base
+
+append vars
+	-
+		var title = "Каталог"
+		meta.description = "Страница каталог"
+		meta.keywords = "Ключевые слова"
+		var headerStyle = "dark"
+		var menuCurrent = "catalog"
+
+block content
+	include pug/pages/catalog/_breadcrumbs.pug
+	include pug/pages/catalog/_catalog.pug

@@ -1,0 +1,26 @@
+.section--text-type3 {
+	padding-top: 40px;
+	padding-bottom: 38px;
+
+	.row {
+		flex-wrap: wrap;
+	}
+
+	.col {
+		max-width: 50%;
+		padding-right: 130px;
+	}
+
+	.img-wrapper {
+		margin-top: 60px;
+		margin-bottom: 60px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	h2 {
+		margin-bottom: 20px;
+	}
+}

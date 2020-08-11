@@ -1,0 +1,13 @@
+extends pug/base
+
+append vars
+	-
+		var title = "Раковина"
+		meta.description = "Страница с раковиной"
+		meta.keywords = "Ключевые слова"
+		var headerStyle = "dark"
+		var menuCurrent = "catalog"
+
+block content
+	include pug/pages/product/_breadcrumbs.pug
+	include pug/pages/product/_product.pug

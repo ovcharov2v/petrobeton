@@ -1,0 +1,29 @@
+.swiper {
+    &-nav {
+        display: flex;
+    }
+    &-prev,
+    &-next {
+        width: 71px;
+        height: 20px;
+        background: transparent;
+        border: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+        &.swiper-button-disabled {
+            opacity: 0.5;
+        }
+    }
+    &-prev {
+        margin-right: 25px;
+        background-image: url('../images/common/arrow_left.svg');
+    }
+    &-next {
+        background-image: url('../images/common/arrow_right.svg');
+    }
+}

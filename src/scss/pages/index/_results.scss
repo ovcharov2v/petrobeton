@@ -1,0 +1,25 @@
+.section--results {
+	padding-top: 104px;
+	padding-bottom: 80px;
+
+	.container {
+		position: relative;
+
+		&::after {
+			position: absolute;
+			top: -55px;
+			left: -56px;
+			width: 15px;
+			height: 57px;
+			background-image: url('../images/index/results/marker.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			content: '';
+		}
+	}
+
+	h2 {
+		margin-bottom: 67px;
+	}
+}

@@ -1,0 +1,106 @@
+.footer {
+	padding-top: 26px;
+	padding-bottom: 26px;
+	background: #F3F3F3;
+
+	.logo-col {
+		padding-right: 33px;
+
+		a {
+			display: inline-block;
+			margin-bottom: 11px;
+		}
+
+		p {
+			margin-bottom: 0;
+			font-size: 12px;
+			line-height: 146%;
+		}
+	}
+
+	.contacts-col {
+        position: relative;
+        padding-left: 33px;
+		line-height: 147%;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1px;
+			height: 58px;
+			background: #000;
+			content: '';
+		}
+
+		a {
+            display: block;
+            margin-bottom: 3px;
+			color: #000;
+			text-decoration: none;
+		}
+	}
+
+	.social {
+		display: flex;
+		flex-direction: column;
+		margin-left: auto;
+
+		&__wrapper {
+			margin-top: auto;
+		}
+
+		&__link {
+			position: relative;
+			display: inline-block;
+			width: 43px;
+			height: 43px;
+			margin: 0 6px;
+			border: 1px solid #000;
+			border-radius: 50%;
+			transition: background-color 0.2s;
+
+			&:hover {
+				background: #fff;
+			}
+
+			&::before {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				content: '';
+				transform: translate(-50%, -50%);
+			}
+
+			&--insta {
+				&::before {
+					width: 20px;
+					height: 20px;
+					background-image: url('../images/common/icon_insta.svg');
+				}
+			}
+
+			&--vk {
+				&::before {
+					top: calc(50% + 1px);
+					width: 24px;
+					height: 12px;
+					background-image: url('../images/common/icon_vk.svg');
+				}
+			}
+
+			&--fb {
+				&::before {
+					width: 12px;
+					height: 22px;
+					background-image: url('../images/common/icon_fb.svg');
+				}
+			}
+		}
+	}
+
+	.get-catalog-col {}
+}

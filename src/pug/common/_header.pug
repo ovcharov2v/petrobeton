@@ -1,0 +1,26 @@
+header.header(class="header--"+headerStyle)
+    .container
+        .row
+            .header__logo.col
+                a(href="/")
+                    img(src="images/common/logo_"+headerStyle+".svg", alt="")
+                p Производство предметов интерьера из бетона. 
+                    br
+                    | Доставка и монтаж по России
+            nav.header__nav.col(role="navigation")
+                ul
+                    li(class=(menuCurrent === "index" ? "active" : undefined))
+                        a(href="text.html") 
+                            span ЧТО ТАКОЕ БЕТОН
+                    li
+                        a(href="#") 
+                            span ЭКСПЛУАТАЦИЯ
+                    li(class=(menuCurrent === "catalog" ? "active" : undefined))
+                        a(href="catalog.html") 
+                            span КАТАЛОГ ИЗДЕЛИЙ
+                    li
+                        a(href="#") 
+                            span ОПЛАТА И ДОСТАВКА
+                    li
+                        a(href="#") 
+                            span КОНТАКТЫ

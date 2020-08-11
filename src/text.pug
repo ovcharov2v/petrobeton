@@ -1,0 +1,16 @@
+extends pug/base
+
+append vars
+    -
+        var title = "Тестовая страница"
+        meta.description = "Страница с текстом"
+        meta.keywords = "Ключевые слова"
+        var headerStyle = "dark"
+        var menuCurrent = "index"
+
+block content
+    include pug/pages/text/_breadcrumbs.pug
+    include pug/pages/text/_text_type1.pug
+    include pug/pages/text/_text_type2.pug
+    include pug/pages/text/_text_type3.pug
+    include pug/pages/text/_text_results.pug

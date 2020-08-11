@@ -1,0 +1,42 @@
+.section--text-type2 {
+    position: relative;
+    margin-bottom: -100px;
+   padding-top: 180px;
+   padding-bottom: 100px;
+    overflow: hidden;
+	z-index: 5;
+
+	&::after {
+		position: absolute;
+		top: 0;
+		left: calc(50% + 100px);
+		width: 1020px;
+		height: 1020px;
+		border: 40px solid #C4C4C4;
+		border-radius: 50%;
+		opacity: 0.2;
+		content: '';
+		z-index: -1;
+	}
+    .row {
+        flex-wrap: wrap;
+        margin-bottom: 80px;
+    }
+    .col {
+        flex-grow: 1;
+        max-width: 50%;
+    }
+    .image-col {
+        padding: 0;
+        .row {
+            margin: 0 -20px;
+        }
+        .col {
+            padding: 0 20px;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}

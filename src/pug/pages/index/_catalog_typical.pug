@@ -1,0 +1,58 @@
+section.section.section--catalog-typical
+    .container
+        .row
+            .text-col.col
+                h2 Каталог 
+                    br
+                    | типовых изделий
+                ul.slider-nav-menu
+                    li
+                        a(href="catalog.html" data-group="group1").active Раковины
+                    li
+                        a(href="catalog.html" data-group="group2") Столешницы
+                    li
+                        a(href="catalog.html" data-group="group3") Плитка
+                    li
+                        a(href="catalog.html" data-group="group4") Кашпо
+                    li
+                        a(href="catalog.html" data-group="group5") Лавочки
+                    li
+                        a(href="catalog.html" data-group="group6") Панели
+            .slider-col
+                .catalog-typical.swiper-container
+                    .swiper-wrapper
+                        - var n = 0;                        
+                        while n < 2
+                            .catalog-typical__elem.swiper-slide(data-group="group1")
+                                a(href="product.html")
+                                    img(src="images/index/catalog_typical/img"+(n+1)+".jpg", alt="", loading="lazy")                                
+                            - n++
+                        while n < 4
+                            .catalog-typical__elem.swiper-slide(data-group="group2")
+                                a(href="product.html")
+                                    img(src="images/index/catalog_typical/img"+(n+1)+".jpg", alt="", loading="lazy")                                
+                            - n++
+                        while n < 6
+                            .catalog-typical__elem.swiper-slide(data-group="group3")
+                                a(href="product.html")
+                                    img(src="images/index/catalog_typical/img"+(n+1)+".jpg", alt="", loading="lazy")                                
+                            - n++                        
+                        while n < 9
+                            .catalog-typical__elem.swiper-slide(data-group="group4")
+                                a(href="product.html")
+                                    img(src="images/index/catalog_typical/img"+(n+1)+".jpg", alt="", loading="lazy")                                
+                            - n++
+                        while n < 12
+                            .catalog-typical__elem.swiper-slide(data-group="group5")
+                                a(href="product.html")
+                                    img(src="images/index/catalog_typical/img"+(n+1)+".jpg", alt="", loading="lazy")                                
+                            - n++
+                        while n < 15
+                            .catalog-typical__elem.swiper-slide(data-group="group6")
+                                a(href="product.html")
+                                    img(src="images/index/catalog_typical/img"+(n+1)+".jpg", alt="", loading="lazy")                                
+                            - n++
+                .swiper-nav
+                    button.swiper-prev
+                    button.swiper-next
+                a(href="catalog.html").button.button--dark Перейти в каталог

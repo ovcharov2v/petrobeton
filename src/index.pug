@@ -1,0 +1,25 @@
+extends pug/base
+
+append vars
+	-
+		var title = "Главная"
+		meta.description = "Главная страница"
+		meta.keywords = "Ключевые слова"
+		var headerStyle = "light"		
+		var menuCurrent = "index"
+
+block content
+	include pug/pages/index/_intro.pug
+	include pug/pages/index/_gallery.pug
+	include pug/pages/index/_catalog_typical.pug
+	include pug/pages/index/_catalog_individual.pug
+	include pug/pages/index/_reviews.pug
+	include pug/pages/index/_get_price.pug
+	include pug/pages/index/_faq.pug
+	include pug/pages/index/_results.pug
+	include pug/pages/index/_get_3d_catalog.pug
+	include pug/pages/index/_experience.pug
+	include pug/pages/index/_instagram.pug
+	include pug/pages/index/_contacts.pug
+block after-footer
+	include pug/pages/index/_text.pug

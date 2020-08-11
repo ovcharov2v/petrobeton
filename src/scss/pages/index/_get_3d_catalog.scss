@@ -1,0 +1,87 @@
+.section--get-3d-catalog {
+	padding-top: 118px;
+	padding-bottom: 150px;
+	overflow: hidden;
+
+	.container {
+		position: relative;
+		z-index: 1;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			right: 15px;
+			width: 100vw;
+			height: 100%;
+			background: #F3F3F3;
+			content: '';
+			z-index: -1;
+		}
+
+		&::after {
+			position: absolute;
+			top: -28px;
+			left: -56px;
+			width: 15px;
+			height: 57px;
+			background-image: url('../images/index/get_3d_catalog/marker.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			content: '';
+		}
+	}
+
+	.row {
+		position: relative;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 66px;
+		padding-bottom: 66px;
+
+		&::before,
+		&::after {
+			position: absolute;
+			max-width: 100%;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			opacity: 0.8;
+			content: '';
+		}
+
+		&::before {
+			width: 318px;
+			height: 314px;
+			top: -57px;
+			left: 26%;
+			background-image: url('../images/index/get_3d_catalog/sphere.png');
+		}
+
+		&::after {
+			width: 146px;
+			height: 144px;
+			bottom: -47px;
+			right: 32%;
+			background-image: url('../images/index/get_3d_catalog/sphere_small.png');
+		}
+	}
+
+	.title-col {
+		h2 {
+			margin-bottom: 0;
+		}
+	}
+
+	.link-col {
+		padding-right: 85px;
+
+		p {
+			margin-bottom: 38px;
+		}
+
+		.button {
+			min-width: 219px;
+		}
+	}
+}

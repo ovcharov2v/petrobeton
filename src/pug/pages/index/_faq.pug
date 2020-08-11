@@ -1,0 +1,15 @@
+section.section.section--faq
+    .container
+        h2 Вопросы и ответы
+        .faq
+            - var n = 0
+            while n <= 7
+                .faq__elem(class=""+((n>5)?'d-none':''))
+                    .faq__title
+                        h6 Бетон впитывает воду и пачкается?
+                        button.faq__toggle
+                    .faq__answer
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quas velit fuga reiciendis nulla exercitationem.
+                        p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem consectetur magni perspiciatis nam consequuntur suscipit tempora, voluptas dolores corporis neque.
+                - n++
+        button.faq-load-more Еще вопросы

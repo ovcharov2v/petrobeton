@@ -1,0 +1,23 @@
+section.section.section--reviews
+    .container
+        .row
+            .text-col.col
+                h2 Отзывы 
+                    br
+                    | наших 
+                    br
+                    | клиентов
+            .reviews-col
+                .reviews.swiper-container
+                    .swiper-wrapper.gallery
+                        - var n = 0;
+                        while n < 5
+                            .reviews__elem.swiper-slide
+                                a.gallery__elem(href="images/index/reviews/review"+(n+1)+".jpg")
+                                    img(src="images/index/reviews/review"+(n+1)+"_thumb.jpg", alt="", loading="lazy")
+                            - n++
+                .slider-nav-wrapper
+                    .swiper-nav
+                        button.swiper-prev
+                        button.swiper-next
+                    a(href="text.html") Больше про эксплуатацию

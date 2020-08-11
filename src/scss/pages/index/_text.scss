@@ -1,0 +1,55 @@
+.section--text {
+	padding-top: 128px;
+	padding-bottom: 200px;
+
+	.row {
+		flex-wrap: wrap;
+	}
+
+	.col {
+		width: 100%;
+		max-width: 50%;
+		margin-bottom: 80px;
+		padding-right: 200px;
+	}
+
+	h2 {
+		margin-bottom: 34px;
+	}
+
+	p {
+		margin-bottom: 17px;
+	}
+
+	ul,
+	ol {
+		margin-bottom: 17px;
+		padding-left: 0;
+	}
+
+	ul {
+		li {
+			list-style-type: none;
+
+			&::before {
+				content: '- ';
+			}
+		}
+	}
+
+	ol {
+		li {
+			list-style-position: inside;
+		}
+	}
+
+	a {
+		color: #000;
+		transition: opacity 0.2s;
+
+		&:hover {
+			text-decoration: none;
+			opacity: 0.8;
+		}
+	}
+}

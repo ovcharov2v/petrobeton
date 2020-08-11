@@ -1,0 +1,78 @@
+.section--get-price {
+	padding-top: 58px;
+	padding-bottom: 33px;
+
+	.container {
+		position: relative;
+		padding-top: 171px;
+		padding-bottom: 197px;
+
+		&::before {
+			position: absolute;
+			top: 40px;
+			right: 55px;
+			width: calc(100% - 326px);
+			height: calc(100% - 80px);
+			box-shadow: 0 0 0 40px #C4C4C4;
+			opacity: 0.2;
+			content: '';
+		}
+	}
+
+	.row {
+		margin: 0;
+
+		.col {
+			flex-grow: 1;
+			width: 100%;
+			max-width: 500px;
+		}
+	}
+
+	.text-col {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 113px;
+		z-index: 1;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 807px;
+			height: 374px;
+			background-image: url('../images/index/get_price/bg.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			content: '';
+			z-index: -1;
+		}
+
+		h2 {
+			max-width: 500px;
+			margin-bottom: 0;
+			color: #fff;
+		}
+	}
+
+	.form-col {
+		position: relative;
+		padding: 72px 87px 69px 84px;
+		background: #F3F3F3;
+		transform: translateY(49px);
+		z-index: 10;
+
+		input {
+			width: 100%;
+			margin-bottom: 25px;
+		}
+
+		.button {
+			min-width: 219px;
+			margin-bottom: 5px;
+		}
+	}
+}

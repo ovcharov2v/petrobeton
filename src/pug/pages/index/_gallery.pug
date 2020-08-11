@@ -1,0 +1,37 @@
+section.section.section--gallery
+    .container
+        .row
+            .text-col.col
+                h2 Фото и видео 
+                    br
+                    | галерея
+                p Серый, угрюмый, шершавый 
+                    br
+                    | и пыльный — таким мы привыкли видеть бетон.
+                p Современные технологии и методы обработки, а главное умение взглянуть на старое по-новому, позволяют изготовить необыкновенно красивые изделия
+                .gallery-slider-thumb.gallery-thumbs.swiper-container
+                    .swiper-wrapper
+                        - var n = 0;                        
+                        while n < 6
+                            .gallery-slider-thumb__elem.swiper-slide
+                                img(src="images/index/gallery/img"+(n+1)+"_nav.jpg", alt="", loading="lazy")                                
+                            - n++
+            .slider-col.col
+                .gallery-slider.swiper-container
+                    .swiper-wrapper.gallery
+                        - var n = 0;  
+                        while n < 1
+                            .gallery-slider__elem.swiper-slide
+                                a.gallery__elem.gallery__elem--video(href="https://www.youtube.com/watch?v=4-1o0wmZUFE")
+                                    img(src="images/index/gallery/img"+(n+1)+"_thumb.jpg", alt="", loading="lazy")                                
+                            - n++                      
+                        while n < 6
+                            .gallery-slider__elem.swiper-slide
+                                a.gallery__elem(href="images/index/gallery/img"+(n+1)+".jpg")
+                                    img(src="images/index/gallery/img"+(n+1)+"_thumb.jpg", alt="", loading="lazy")                                
+                            - n++
+                .swiper-nav
+                    button.swiper-prev
+                    button.swiper-next
+
+            

@@ -1,0 +1,139 @@
+.header {
+	.row {
+		padding: 47px 0;
+		justify-content: space-between;
+	}
+
+	.header__logo {
+		a {
+			display: block;
+			margin-bottom: 21px;
+
+			img {
+				max-width: 100%;
+			}
+		}
+
+		p {
+			margin-bottom: 0;
+			font-size: 12px;
+			line-height: 15px;
+		}
+	}
+
+	.header__nav {
+		ul {
+			display: flex;
+			margin: 0;
+			padding: 0;
+
+			li {
+				list-style-type: none;
+
+				a {
+					display: block;
+					padding: 7px 25px 0;
+					font-size: 10px;
+					line-height: 21px;
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+					text-decoration: none;
+
+					span {
+						position: relative;
+						padding-bottom: 9px;
+
+						&::after {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 100%;
+							height: 1px;
+							transform: scaleX(-1);
+							content: '';
+							opacity: 0;
+							transition: opacity 0.2s;
+						}
+					}
+				}
+
+				&.active, &:hover {
+					a {
+						span {
+							&::after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+
+				&:last-child {
+					a {
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&--light {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 99;
+
+		.header__logo {
+			p {
+				color: #fff;
+			}
+		}
+
+		.header__nav {
+			ul {
+
+				li {
+
+					a {
+						color: #fff;
+
+						span {
+
+							&::after {
+								background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1px'%3E%3Cline x1='0' y1='0' x2='100%25' y2='0' stroke='%23fff' stroke-width='1px' stroke-dasharray='17px 7px 11px 7px 1000px'%3E%3C/line%3E%3C/svg%3E");
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--dark {
+		.header__logo {
+			p {
+				color: #000;
+			}
+		}
+
+		.header__nav {
+			ul {
+
+				li {
+
+					a {
+						color: #000;
+
+						span {
+
+							&::after {
+								background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1px'%3E%3Cline x1='0' y1='0' x2='100%25' y2='0' stroke='%23000' stroke-width='0.5px' stroke-dasharray='17px 7px 11px 7px 1000px'%3E%3C/line%3E%3C/svg%3E");
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+section.section.section--instagram
+    .container
+        h2 Инстаграм виджет
+        .instagram.swiper-container
+            .swiper-wrapper
+                - var n = 0;
+                while n <=7
+                    .instagram__elem.swiper-slide
+                        a(href="https://www.instagram.com/" target="_blank")
+                            img(src="https://via.placeholder.com/283", alt="", loading="lazy")
+                    - n++
+        .swiper-nav
+            button.swiper-prev
+            button.swiper-next
+                

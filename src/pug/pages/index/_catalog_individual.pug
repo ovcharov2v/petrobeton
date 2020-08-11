@@ -1,0 +1,20 @@
+section.section.section--catalog-individual
+    .container
+        h2 Изделия
+            br
+            | по индивидуальному 
+            br
+            | проекту
+        .catalog-individual.swiper-container
+            .swiper-wrapper.gallery
+                - var n = 0;
+                - var titles = ['Кашпо для интерьера', 'Поддон для Кристины Арбокайте', 'Поддон больших размеров', 'Поддон средних размеров', 'Поддон для душевой кабины', 'Кашпо высокое', 'Горшки разные',                ]
+                while n < 7
+                    .catalog-individual__elem.swiper-slide
+                        a.gallery__elem(href="images/index/catalog_individual/img"+(n+1)+".jpg")
+                            img(src="images/index/catalog_individual/img"+(n+1)+"_thumb.jpg", alt="", loading="lazy")
+                        p #{titles[n]}
+                    - n++
+        .swiper-nav
+            button.swiper-prev
+            button.swiper-next
