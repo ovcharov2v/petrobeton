@@ -2,7 +2,10 @@ section.section.section--text-type1
     .container
         h1 Что такое бетон?
         .img-wrapper
-            img(src="https://via.placeholder.com/1200x231", alt="")
+            picture
+                source(media="(max-width: 900px)" srcset="https://via.placeholder.com/300x188")
+                source(media="(min-width: 901px)" srcset="https://via.placeholder.com/1200x231")
+                img(src="https://via.placeholder.com/1200x231", alt="")
         .row
             .col
                 p Бетон (от фр. béton) — искусственный каменный строительный материал, получаемый в результате формования и затвердевания рационально подобранной и уплотнённой смеси, состоящей из вяжущего вещества (цемент или др.), крупных и мелких заполнителей, воды. 

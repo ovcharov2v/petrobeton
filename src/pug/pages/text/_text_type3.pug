@@ -9,7 +9,10 @@ section.section.section--text-type3
             .col
                 p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
         .img-wrapper
-            img(src="https://via.placeholder.com/1200x373", alt="")
+            picture
+                source(media="(max-width: 900px)" srcset="https://via.placeholder.com/300x188")
+                source(media="(min-width: 901px)" srcset="https://via.placeholder.com/1200x231")
+                img(src="https://via.placeholder.com/1200x231", alt="")
         .row
             .col
                 p Бетон (от фр. béton) — искусственный каменный строительный материал, получаемый в результате формования и затвердевания рационально подобранной и уплотнённой смеси, состоящей из вяжущего вещества (цемент или др.), крупных и мелких заполнителей, воды. 

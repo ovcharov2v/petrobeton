@@ -1,4 +1,8 @@
 .section--text-results {
-    padding-top: 38px;
-    padding-bottom: 88px;
+	padding-top: 38px;
+	padding-bottom: 88px;
+
+	@include mobile {
+		padding-bottom: 40px;
+	}
 }

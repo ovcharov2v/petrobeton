@@ -2,6 +2,10 @@
 	padding-top: 30px;
 	padding-bottom: 8px;
 
+	@include mobile {
+		display: none;
+	}
+
 	.breadcrumbs {
 		ul {
 			margin: 0;
@@ -30,7 +34,13 @@
 					text-decoration: none;
 
 					&:hover {
-						text-decoration: underline;
+						color: #000;
+					}
+				}
+				span {
+					&.disabled {
+						color: #909090;
+					text-decoration: none;
 					}
 				}
 			}

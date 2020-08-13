@@ -2,13 +2,17 @@
 	padding-top: 100px;
 	overflow: hidden;
 
+	@include mobile {
+		padding-top: 35px;
+	}
+
 	.container {
 		position: relative;
 
 		&::before {
 			position: absolute;
 			top: -50px;
-			left: -56px;
+			left: -36px;
 			width: 21px;
 			height: 64px;
 			background-image: url('../images/index/reviews/marker.svg');
@@ -16,16 +20,32 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			content: '';
+
+			@media screen and(max-width: 1400px) {
+				content: none;
+			}
 		}
 	}
 
 	.text-col {}
 
+	.row {
+		@include tablet {
+			flex-direction: column;
+			width: auto;
+		}
+	}
+
 	.reviews-col {
 		flex-grow: 1;
-        position: relative;
-        padding-bottom: 22px;
+		max-width: calc(100% - 178px);
+		position: relative;
+		padding-bottom: 22px;
 		z-index: 1;
+
+		@include tablet {
+			max-width: 100%;
+		}
 
 		&::after {
 			position: absolute;
@@ -37,16 +57,28 @@
 			opacity: 0.2;
 			content: '';
 			z-index: -1;
+
+			@include mobile {
+				height: calc(100% - 80px);
+			}
 		}
 
 		.reviews {
-			max-width: 920px;
+			width: 100%;
 			margin-bottom: 20px;
 			padding: 0 20px;
+
+			@include mobile {
+				margin-bottom: 63px;
+			}
 
 			&__elem {
 				margin-bottom: 30px;
 				box-shadow: 0 10px 20px rgba(#000, 0.1);
+
+				@include tablet {
+					margin-bottom: 0;
+				}
 
 				a {
 					display: block;
@@ -61,11 +93,19 @@
 
 		.slider-nav-wrapper {
 			max-width: 920px;
-            margin: 0 auto;
-            padding: 0 20px;
+			margin: 0 auto;
+			padding: 0 20px;
+
+			@include mobile {
+				display: none;
+			}
 
 			.swiper-nav {
 				margin-bottom: 43px;
+
+				@include tablet {
+					margin-bottom: 15px;
+				}
 			}
 
 			a {

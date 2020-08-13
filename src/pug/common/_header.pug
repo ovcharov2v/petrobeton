@@ -7,7 +7,7 @@ header.header(class="header--"+headerStyle)
                 p Производство предметов интерьера из бетона. 
                     br
                     | Доставка и монтаж по России
-            nav.header__nav.col(role="navigation")
+            nav#main-menu.header__nav.col(role="navigation")
                 ul
                     li(class=(menuCurrent === "index" ? "active" : undefined))
                         a(href="text.html") 
@@ -24,3 +24,5 @@ header.header(class="header--"+headerStyle)
                     li
                         a(href="#") 
                             span КОНТАКТЫ
+            .burger-col.col.d-none
+                button#mobile-menu-toggle.header__burger

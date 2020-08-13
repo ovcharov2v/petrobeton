@@ -2,7 +2,7 @@ extends pug/base
 
 append vars
     -
-        var title = "Тестовая страница"
+        var title = "Текстовая страница"
         meta.description = "Страница с текстом"
         meta.keywords = "Ключевые слова"
         var headerStyle = "dark"
@@ -13,4 +13,5 @@ block content
     include pug/pages/text/_text_type1.pug
     include pug/pages/text/_text_type2.pug
     include pug/pages/text/_text_type3.pug
-    include pug/pages/text/_text_results.pug
+    include pug/pages/text/_text_results.pug    
+    include pug/pages/index/_catalog_typical.pug

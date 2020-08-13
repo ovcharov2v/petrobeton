@@ -2,8 +2,16 @@
 	padding-bottom: 105px;
 	overflow: hidden;
 
+	@include mobile {
+		padding-top: 50px;
+	}
+
 	h2 {
 		margin-bottom: 42px;
+
+		@include mobile {
+			margin-bottom: 37px;
+		}
 	}
 
 	.catalog {
@@ -15,14 +23,26 @@
 		&::after {
 			position: absolute;
 			top: calc(50% - 20px);
-			left: calc(50% + 40px);
-			width: 50vw;
+			left: 50vw;
+			width: 100vw;
 			height: calc(100% - 384px);
 			box-shadow: 0 0 0 40px #C4C4C4;
 			content: '';
 			transform: translateY(-50%);
 			opacity: 0.2;
 			z-index: -1;
+
+			@include tablet {
+				left: 60vw;
+			}
+
+			@include mobile {
+				left: calc(50vw + 20px);
+				top: -50px;
+				height: calc(100% + 200px);
+				box-shadow: 0 0 0 30px #C4C4C4;
+				transform: none;
+			}
 		}
 
 		.col {
@@ -30,14 +50,31 @@
 			max-width: 485px;
 			margin-bottom: 40px;
 			padding: 0 20px;
+
+			@include tablet {
+				max-width: 50%;
+			}
+
+			@include mobile {
+				max-width: 100%;
+				margin-bottom: 30px;
+			}
 		}
 
 		&__elem {
 			position: relative;
-			display: inline-block;
+			display: block;
 			text-decoration: none;
 			background: #000;
 			overflow: hidden;
+
+			@include mobile {
+				height: 250px;
+			}
+
+			@media screen and (max-width: 600px) {
+				height: 160px;
+			}
 
 			&::before {
 				position: absolute;
@@ -56,6 +93,10 @@
 				z-index: 1;
 				opacity: 0;
 				transition: opacity 0.2s;
+
+				@include tablet {
+					content: none;
+				}
 			}
 
 			&::after {
@@ -69,6 +110,10 @@
 				z-index: 1;
 				opacity: 0;
 				transition: opacity 0.2s;
+
+				@include tablet {
+					content: none;
+				}
 			}
 
 
@@ -80,7 +125,7 @@
 				transition: opacity 0.2s, filter 0.2s linear;
 			}
 
-			h6 {
+			p {
 				position: absolute;
 				left: 32px;
 				bottom: 30px;
@@ -102,6 +147,11 @@
 				img {
 					opacity: 0.4;
 					filter: blur(5px);
+
+					@include tablet {
+						opacity: 0.5;
+						filter: none;
+					}
 				}
 			}
 		}

@@ -9,11 +9,24 @@
 	.col {
 		max-width: 50%;
 		padding-right: 130px;
+
+		@include tablet {
+			padding-right: 20px;
+		}
+
+		@include mobile {
+			max-width: 100%;
+		}
 	}
 
 	.img-wrapper {
 		margin-top: 60px;
 		margin-bottom: 60px;
+
+		@include mobile {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
 
 		img {
 			width: 100%;

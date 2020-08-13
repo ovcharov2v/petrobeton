@@ -1,10 +1,16 @@
 .section--text-type2 {
-    position: relative;
-    margin-bottom: -100px;
-   padding-top: 180px;
-   padding-bottom: 100px;
-    overflow: hidden;
+	position: relative;
+	margin-bottom: -100px;
+	padding-top: 180px;
+	padding-bottom: 100px;
+	overflow: hidden;
 	z-index: 5;
+
+	@include mobile {
+		padding-top: 35px;
+		padding-bottom: 45px;
+		margin-bottom: 0;
+	}
 
 	&::after {
 		position: absolute;
@@ -17,26 +23,83 @@
 		opacity: 0.2;
 		content: '';
 		z-index: -1;
+
+		@include mobile {
+			content: none;
+		}
 	}
-    .row {
-        flex-wrap: wrap;
-        margin-bottom: 80px;
-    }
-    .col {
-        flex-grow: 1;
-        max-width: 50%;
-    }
-    .image-col {
-        padding: 0;
-        .row {
-            margin: 0 -20px;
-        }
-        .col {
-            padding: 0 20px;
-            img {
-                display: block;
-                width: 100%;
-            }
-        }
-    }
+
+	.row {
+		flex-wrap: wrap;
+		margin-bottom: 80px;
+
+		@include mobile {
+			flex-direction: column;
+		}
+	}
+
+	.col {
+		flex-grow: 1;
+		max-width: 50%;
+
+		@include mobile {
+			max-width: 100%;
+		}
+	}
+
+	.image-col {
+		padding-left: 0;
+
+		@include mobile {
+			padding-left: 20px;
+		}
+
+		#text-image-slider {
+			@media screen and (max-width: 600px) {
+				overflow: visible;
+			}
+		}
+
+		.col {
+			padding: 0 20px;
+
+		}
+
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.bottom-text {
+		position: relative;
+		z-index: 1;
+
+		@include mobile {
+			display: block;
+			margin-bottom: 0;
+			padding-top: 55px;
+			padding-right: 20px;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 90px;
+				width: calc(100% - 20px);
+				background: #F3F3F3;
+				;
+				content: '';
+				z-index: -1;
+			}
+
+			h2 {
+				margin-bottom: 30px;
+			}
+
+			p {
+				margin-bottom: 35px;
+			}
+		}
+	}
 }

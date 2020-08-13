@@ -1,4 +1,29 @@
 .section--text-type1 {
+	position: relative;
+	padding-bottom: 35px;
+	z-index: 1;
+	overflow: hidden;
+
+	@include mobile {
+		padding-top: 60px;
+	}
+
+	&::after {
+		position: absolute;
+		top: 0;
+		left: calc(50% - 50px);
+		width: 540px;
+		height: 540px;
+		border: 30px solid #C4C4C4;
+		border-radius: 50%;
+		opacity: 0.2;
+		z-index: -1;
+
+		@include mobile {
+			content: '';
+		}
+	}
+
 	h1 {
 		margin-bottom: 20px;
 	}
@@ -6,14 +31,36 @@
 	.img-wrapper {
 		margin-bottom: 56px;
 
+		@include mobile {
+			margin-bottom: 32px;
+		}
+
 		img {
 			width: 100%;
 		}
 	}
 
+	.row {
+		flex-wrap: wrap;
+	}
+
 	.col {
 		width: 100%;
-        max-width: 50%;
-        padding-right: 130px;
+		max-width: 50%;
+		padding-right: 130px;
+
+		@include tablet {
+			padding-right: 20px;
+		}
+
+		@include mobile {
+			max-width: 100%;
+		}
+
+		p {
+			@include mobile {
+				margin-bottom: 26px;
+			}
+		}
 	}
 }

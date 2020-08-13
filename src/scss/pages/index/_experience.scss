@@ -3,8 +3,29 @@
 	padding-bottom: 78px;
 	overflow: hidden;
 
+	@include mobile {
+		padding-top: 32px;
+		padding-bottom: 35px;
+	}
+
+	.row {
+		@include tablet {
+			flex-direction: column;
+		}
+	}
+
 	.title-col {
 		padding-right: 100px;
+
+		@include tablet {
+			padding-right: 15px;
+		}
+
+		h2 {
+			@include tablet {
+				margin-bottom: 23px;
+			}
+		}
 	}
 
 	.story-col {
@@ -12,6 +33,19 @@
 		display: flex;
 		padding: 120px 15px 105px 130px;
 		z-index: 1;
+
+		@media screen and (max-width: 1200px) {
+			padding: 80px 15px 80px 90px;
+		}
+
+		@include tablet {
+			padding: 80px 20px 30px;
+		}
+
+		@include mobile {
+			display: block;
+			padding: 0 20px;
+		}
 
 		&::before {
 			position: absolute;
@@ -23,10 +57,27 @@
 			opacity: 0.2;
 			content: '';
 			z-index: -1;
+
+			@include tablet {
+				left: 260px;
+			}
+
+			@include mobile {
+				left: 120px;
+				width: 570px;
+				height: 570px;
+				border-radius: 50%;
+			}
 		}
 
 		.photo-wrapper {
 			min-width: 288px;
+
+			@include mobile {
+				max-width: 189px;
+				min-width: auto;
+				margin-bottom: 32px;
+			}
 
 			img {
 				display: inline-block;
@@ -44,6 +95,15 @@
 		.content-wrapper {
 			padding-left: 90px;
 			padding-right: 160px;
+
+			@media screen and (max-width: 1200px) {
+				padding: 0 30px 40px 75px;
+			}
+
+			@include mobile {
+				max-width: 400px;
+				padding: 0;
+			}
 
 			p {
 				margin-bottom: 20px;

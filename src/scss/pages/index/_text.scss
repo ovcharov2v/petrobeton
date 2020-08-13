@@ -1,9 +1,17 @@
 .section--text {
-	padding-top: 128px;
-	padding-bottom: 200px;
+	padding-top: 68px;
+	padding-bottom: 30px;
+
+	@include mobile {
+		flex-direction: column;
+	}
 
 	.row {
 		flex-wrap: wrap;
+
+		@include mobile {
+			flex-direction: column;
+		}
 	}
 
 	.col {
@@ -11,6 +19,15 @@
 		max-width: 50%;
 		margin-bottom: 80px;
 		padding-right: 200px;
+
+		@include tablet {
+			padding-right: 20px;
+		}
+
+		@include mobile {
+			max-width: 100%;
+			margin-bottom: 60px;
+		}
 	}
 
 	h2 {

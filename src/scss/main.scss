@@ -15,25 +15,34 @@ body {
 	font-family: 'Geometria', Helvetica, Geneva, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 20px;
+
+	@include mobile {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
+	&.mobile-menu {
+		overflow: hidden;
+	}
 }
 
 .container {
 	width: 100%;
 	max-width: 1230px;
 	margin: 0 auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .row {
 	display: flex;
-	margin-left: -15px;
-	margin-right: -15px;
+	margin-left: -20px;
+	margin-right: -20px;
 }
 
 .col {
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 h1,
@@ -45,16 +54,31 @@ h6 {
 	margin-top: 0;
 }
 
-h1 {	
+h1 {
 	font-size: 50px;
 	font-weight: normal;
 	line-height: 63px;
+
+	@include tablet {
+		font-size: 40px;
+		line-height: 43px;
+	}
+
+	@include mobile {
+		font-size: 24px;
+		line-height: 30px;
+	}
 }
 
 h2 {
 	font-size: 30px;
 	font-weight: normal;
 	line-height: 38px;
+
+	@include mobile {
+		font-size: 24px;
+		line-height: 30px;
+	}
 }
 
 p {
@@ -62,7 +86,7 @@ p {
 }
 
 .d-none {
-	display: none;
+	display: none !important;
 }
 
 
@@ -101,4 +125,3 @@ p {
 @import "pages/text/text_type2";
 @import "pages/text/text_type3";
 @import "pages/text/text_results";
-

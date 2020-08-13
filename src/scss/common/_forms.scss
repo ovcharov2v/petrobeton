@@ -13,6 +13,12 @@
 	cursor: pointer;
 	transition: all 0.2s;
 
+	@include mobile {
+		padding: 17px 20px 16px;
+		font-size: 10px;
+		line-height: 13px;
+	}
+
 	&:focus {
 		outline: none;
 	}
@@ -61,6 +67,7 @@
 		&::after {
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1px'%3E%3Cline x1='0' y1='0' x2='100%25' y2='0' stroke='%23000' stroke-width='2px' stroke-dasharray='17px 7px 11px 7px 1000px'%3E%3C/line%3E%3C/svg%3E");
 		}
+
 		&:hover {
 			background: #000;
 			color: #fff;
@@ -83,6 +90,13 @@
 		text-transform: uppercase;
 		color: #080808;
 		transition: border-color 0.3s;
+		background: transparent;
+
+		@include mobile {
+			padding: 15px 20px;
+			font-size: 12px;
+			line-height: 15px;
+		}
 
 		&:focus {
 			outline: none;

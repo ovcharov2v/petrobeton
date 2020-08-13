@@ -3,6 +3,11 @@
 	padding-bottom: 150px;
 	overflow: hidden;
 
+	@include mobile {
+		padding-top: 80px;
+		padding-bottom: 30px;
+	}
+
 	.container {
 		position: relative;
 		z-index: 1;
@@ -16,12 +21,16 @@
 			background: #F3F3F3;
 			content: '';
 			z-index: -1;
+
+			@include mobile {
+				content: none;
+			}
 		}
 
 		&::after {
 			position: absolute;
 			top: -28px;
-			left: -56px;
+			left: -36px;
 			width: 15px;
 			height: 57px;
 			background-image: url('../images/index/get_3d_catalog/marker.svg');
@@ -29,6 +38,10 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			content: '';
+
+			@media screen and(max-width: 1400px) {
+				content: none;
+			}
 		}
 	}
 
@@ -38,6 +51,13 @@
 		align-items: center;
 		padding-top: 66px;
 		padding-bottom: 66px;
+
+		@include mobile {
+			padding-top: 0;
+			padding-bottom: 0;
+			flex-direction: column;
+			align-items: flex-start;
+		}
 
 		&::before,
 		&::after {
@@ -56,6 +76,19 @@
 			top: -57px;
 			left: 26%;
 			background-image: url('../images/index/get_3d_catalog/sphere.png');
+
+			@include tablet {
+				width: 195px;
+				height: 195px;
+				top: -116px;
+				left: auto;
+				right: -5%;
+			}
+
+			@include mobile {
+				top: -15px;
+				right: -70px;
+			}
 		}
 
 		&::after {
@@ -64,24 +97,63 @@
 			bottom: -47px;
 			right: 32%;
 			background-image: url('../images/index/get_3d_catalog/sphere_small.png');
+
+			@include tablet {
+				bottom: 83px;
+				right: 52%;
+			}
+
+			@include mobile {
+				bottom: 56%;
+				right: auto;
+				left: 80px;
+				width: 83px;
+				height: 86px;
+			}
+		}
+	}
+
+	.col {
+		@include mobile {
+			width: 100%;
 		}
 	}
 
 	.title-col {
 		h2 {
 			margin-bottom: 0;
+
+			@include mobile {
+				margin-bottom: 74px;
+			}
 		}
 	}
 
 	.link-col {
 		padding-right: 85px;
 
+		@include mobile {
+			width: calc(100% - 20px);
+			padding: 80px 20px 59px 20px;
+			background: #F3F3F3;
+		}
+
 		p {
 			margin-bottom: 38px;
+
+			@include mobile {
+				margin-bottom: 34px;
+				font-size: 14px;
+				line-height: 18px;
+			}
 		}
 
 		.button {
 			min-width: 219px;
+
+			@include mobile {
+				min-width: 160px;
+			}
 		}
 	}
 }

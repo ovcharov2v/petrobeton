@@ -1,10 +1,13 @@
 import './vendor';
 
 document.addEventListener("DOMContentLoaded", function () {
-
 });
 
 window.onload = function () {
+	//Мобильное меню
+	document.querySelector('#mobile-menu-toggle').addEventListener('click', function() {
+		document.body.classList.toggle('mobile-menu')
+	})
 
 	//Слайдер в блоке Фото и видео галерея	
 	var galleryThumbs = new Swiper('.section--gallery .gallery-slider-thumb', {
@@ -56,6 +59,7 @@ window.onload = function () {
 		},
 	};	
 	Swiper.use(swiperNavMenu);
+	
 	var catTypicalSlider = new Swiper('.section--catalog-typical .swiper-container', {
 		slidesPerView: 2,
 		spaceBetween: 60,
@@ -63,8 +67,27 @@ window.onload = function () {
 			nextEl: '.section--catalog-typical .swiper-next',
 			prevEl: '.section--catalog-typical .swiper-prev',
 		},
-		navMenuEl: '.section--catalog-typical .slider-nav-menu'
+		navMenuEl: '.section--catalog-typical .slider-nav-menu',
+		breakpoints: {
+			0: {
+				slidesPerView: 1.3,
+				spaceBetween: 20,
+			},
+			400: {
+				slidesPerView: 1.5,
+				spaceBetween: 20,
+			},
+			600: {
+				slidesPerView: 3.5,
+				spaceBetween: 20,
+			},
+			1025: {
+				slidesPerView: 2,
+				spaceBetween: 60,
+			},
+		  }
 	})
+
 
 	//Слайдер в блоке Изделия по индивидуальному проекту	
 	var catIndividualSlider = new Swiper('.section--catalog-individual .swiper-container', {
@@ -75,8 +98,47 @@ window.onload = function () {
 		navigation: {
 			nextEl: '.section--catalog-individual .swiper-next',
 			prevEl: '.section--catalog-individual .swiper-prev',
-		}
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.2,
+				spaceBetween: 15,
+				centeredSlides: true,
+			},
+			400: {
+				slidesPerView: 1.5,
+				spaceBetween: 15,
+				centeredSlides: true,
+			},
+			600: {
+				slidesPerView: 2.5,
+				spaceBetween: 15,
+				centeredSlides: true,
+			},
+			1025: {
+				slidesPerView: 'auto',
+				spaceBetween: 30,
+				centeredSlides: false,
+				loop: false,
+			},
+			1500: {
+				spaceBetween: 50,
+				centeredSlides: false,
+			},
+		  }
 	})
+
+	function catIndividualSlider_setSlide() {
+		if(window.innerWidth <= 1024 && catIndividualSlider.activeIndex == 0) {
+			catIndividualSlider.slideTo(1)
+		}
+	}
+	catIndividualSlider_setSlide()
+
+	window.addEventListener("resize", function() {
+		catIndividualSlider_setSlide()
+	}, false);
+
 
 	//Слайдер в блоке Инстаграм виджет
 	var instaSlider = new Swiper('.section--instagram .swiper-container', {
@@ -87,6 +149,20 @@ window.onload = function () {
 			nextEl: '.section--instagram .swiper-next',
 			prevEl: '.section--instagram .swiper-prev',
 		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.2,
+				spaceBetween: 15,
+			},
+			550: {
+				slidesPerView: 2.5,
+				spaceBetween: 15,
+			},
+			769: {
+			  slidesPerView: 4,
+			  spaceBetween: 20,
+			},
+		  }
 	})
 
 	//Слайдер в блоке Отзывы наших клиентов
@@ -97,16 +173,30 @@ window.onload = function () {
 			nextEl: '.section--reviews .swiper-next',
 			prevEl: '.section--reviews .swiper-prev',
 		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.2,
+				spaceBetween: 20,
+			},
+			450: {
+				slidesPerView: 2.5,
+				spaceBetween: 20,
+			},
+			769: {
+			  slidesPerView: 3,
+			  spaceBetween: 40,
+			},
+		  }
 	})
 
 	//Раскрытие элементов аккордеона в FAQ
 	const faqElems = document.querySelectorAll('.section--faq .faq .faq__elem')
-	faqElems.forEach(function (elem) {
-		elem.querySelector('.faq__toggle').addEventListener('click', function (event) {
+	faqElems.forEach(function (elem) {		
+		elem.querySelector('.faq__title').addEventListener('click', function (event) {
 			faqElems.forEach(function (elem) {
-				(elem !== event.target.parentNode.parentNode) ? elem.classList.remove('opened'): ''
+				(elem !== event.target.closest('.faq__elem')) ? elem.classList.remove('opened'): ''
 			})
-			event.target.parentNode.parentNode.classList.toggle('opened')
+			event.target.closest('.faq__elem').classList.toggle('opened')
 		})
 	});
 
@@ -132,7 +222,7 @@ window.onload = function () {
 		}); 
 	});
 
-	
+	//Карта
 	const mapContainer = document.querySelector('#map')
 	if(mapContainer !== null) {
 		var script = document.createElement('script')
@@ -141,5 +231,48 @@ window.onload = function () {
 			mapContainer.appendChild(script);			
 		}, 1000);
 	}
+
+	//Слайдер с картинками на текстовой странице
+	var textImageSliderSlider = new Swiper('.section--text-type2 .swiper-container', {
+		slidesPerView: 2,
+		spaceBetween: 40,
+		breakpoints: {
+			0: {
+				slidesPerView: 1.2,
+				spaceBetween: 20,
+			},
+			600: {
+				slidesPerView: 2,
+				spaceBetween: 40,
+			},
+		  }
+	})
+
+	//Ховер на хлебных крошках
+	const breadcrumbsLinks = document.querySelectorAll('.breadcrumbs a')
+	const breadcrumbsSpan = document.querySelector('.breadcrumbs span')
+
+	breadcrumbsLinks.forEach(function(link) {
+		link.addEventListener('mouseenter', function() {
+			breadcrumbsSpan.classList.add('disabled')
+		});
+		link.addEventListener('mouseleave', function() {
+			breadcrumbsSpan.classList.remove('disabled')
+		});
+	})
+
+	//Ховер на элементах меню
+	const menuLinks = document.querySelectorAll('#main-menu a')
+	const menuLinkActive = document.querySelector('#main-menu .active a')
+
+	menuLinks.forEach(function(link) {
+		link.addEventListener('mouseenter', function() {
+			menuLinkActive.classList.add('disabled')
+		});
+		link.addEventListener('mouseleave', function() {
+			menuLinkActive.classList.remove('disabled')
+		});
+	})
+	
 
 };

@@ -21,25 +21,26 @@ section.section.section--product
                     a(href="#").get-3d Скачать 3D
                 p.price 76 230 ₽
                     
-        .text-block
-            h2 Материалы и особенности
-            .row
-                .col
-                    p Накладная раковина из бетона "Чаша" – это классика жанра. Это бетон во всем своем проявлении. И это универсальный дизайн. Самое приятное, что внутри чаши пор нет, а значит за ней ллегко ухаживать. 
-                .col
-                    p Накладная раковина из бетона "Чаша" – это классика жанра. Это бетон во всем своем проявлении. И это универсальный дизайн. Самое приятное, что внутри чаши пор нет, 
-                        br
-                        | а значит за ней ллегко ухаживать. 
-                
-        .gallery.row
-            - var n = 0;  
-                while n < 1
+        .info-wrapper
+            .text-block
+                h2 Материалы и особенности
+                .row
                     .col
-                        a.gallery__elem.gallery__elem--video(href="https://www.youtube.com/watch?v=4-1o0wmZUFE")
-                            img(src="images/product/img"+(n+1)+"_thumb.jpg", alt="", loading="lazy")                                
-                    - n++                      
-                while n < 6
+                        p Накладная раковина из бетона "Чаша" – это классика жанра. Это бетон во всем своем проявлении. И это универсальный дизайн. Самое приятное, что внутри чаши пор нет, а значит за ней ллегко ухаживать. 
                     .col
-                        a.gallery__elem(href="images/product/img"+(n+1)+".jpg")
-                            img(src="images/product/img"+(n+1)+"_thumb.jpg", alt="", loading="lazy")                                
-                    - n++
+                        p Накладная раковина из бетона "Чаша" – это классика жанра. Это бетон во всем своем проявлении. И это универсальный дизайн. Самое приятное, что внутри чаши пор нет, 
+                            br
+                            | а значит за ней ллегко ухаживать. 
+                    
+            .gallery.row
+                - var n = 0;  
+                    while n < 1
+                        .col
+                            a.gallery__elem.gallery__elem--video(href="https://www.youtube.com/watch?v=4-1o0wmZUFE")
+                                img(src="images/product/img"+(n+1)+"_thumb.jpg", alt="", loading="lazy")                                
+                        - n++                      
+                    while n < 6
+                        .col
+                            a.gallery__elem(href="images/product/img"+(n+1)+".jpg")
+                                img(src="images/product/img"+(n+1)+"_thumb.jpg", alt="", loading="lazy")                                
+                        - n++

@@ -2,9 +2,57 @@
 	padding-top: 26px;
 	padding-bottom: 26px;
 	background: #F3F3F3;
+	overflow: hidden;
+
+	@include mobile {
+		padding-top: 46px;
+		padding-bottom: 46px;
+	}
+
+	@media screen and (max-width: 500px) {
+		padding-bottom: 64px;
+	}
+
+	.row {
+		@media screen and (max-width: 500px) {
+			flex-direction: column;
+		}
+	}
+
+	.contacts--wrapper {
+		display: flex;
+		flex-grow: 1;
+
+		@include tablet {
+			flex-direction: column;
+		}
+	}
+
+	.links-wrapper {
+		display: flex;
+		flex-grow: 1;
+
+		@include tablet {
+			flex-direction: column-reverse;
+			align-items: flex-end;
+
+			@media screen and (max-width: 500px) {
+				align-items: flex-start;
+			}
+		}
+	}
 
 	.logo-col {
 		padding-right: 33px;
+
+		@include tablet {
+			margin-bottom: 30px;
+			padding-right: 0;
+		}
+
+		@media screen and (max-width: 500px) {
+			margin-bottom: 27px;
+		}
 
 		a {
 			display: inline-block;
@@ -19,9 +67,17 @@
 	}
 
 	.contacts-col {
-        position: relative;
-        padding-left: 33px;
+		position: relative;
+		padding-left: 33px;
 		line-height: 147%;
+
+		@include tablet {
+			padding-left: 15px;
+		}
+
+		@media screen and (max-width: 500px) {
+			margin-bottom: 35px;
+		}
 
 		&::before {
 			position: absolute;
@@ -31,11 +87,15 @@
 			height: 58px;
 			background: #000;
 			content: '';
+
+			@include tablet {
+				content: none;
+			}
 		}
 
 		a {
-            display: block;
-            margin-bottom: 3px;
+			display: block;
+			margin-bottom: 3px;
 			color: #000;
 			text-decoration: none;
 		}
@@ -46,8 +106,16 @@
 		flex-direction: column;
 		margin-left: auto;
 
+		@media screen and (max-width: 500px) {
+			margin-left: 0;
+		}
+
 		&__wrapper {
 			margin-top: auto;
+
+			@include tablet {
+				margin-top: 0;
+			}
 		}
 
 		&__link {
@@ -58,10 +126,14 @@
 			margin: 0 6px;
 			border: 1px solid #000;
 			border-radius: 50%;
-			transition: background-color 0.2s;
+			transition: background-color 0.2s, filter 0.2s;
 
 			&:hover {
-				background: #fff;
+				background: #000;
+
+				&::before {
+					filter: invert(100%);
+				}
 			}
 
 			&::before {
@@ -102,5 +174,13 @@
 		}
 	}
 
-	.get-catalog-col {}
+	.get-catalog-col {
+		@include tablet {
+			margin-bottom: 30px;
+		}
+
+		@media screen and (max-width: 500px) {
+			margin-bottom: 45px;
+		}
+	}
 }

@@ -2,30 +2,69 @@
 	position: relative;
 	padding-top: 240px;
 	padding-bottom: 67px;
-	background: #000;
+	background-image: url('../images/index/intro/bg.jpg');
+	background-position: center;
 	color: #fff;
 	z-index: 1;
+	overflow: hidden;
 
-	&::before {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-image: url('../images/index/intro/bg.jpg');
-		background-position: center;
-		opacity: 0.7;
-		content: '';
-		z-index: -1;
+	@include mobile {
+		padding-top: 0;
+		padding-bottom: 60px;
+		background: transparent;
+	}
+
+	.container {
+		&--main {
+			@include mobile {
+				padding-top: 90px;
+				padding-bottom: 30px;
+				background: transparent;
+				background-image: url('../images/index/intro/bg.jpg');
+				background-position: center;
+			}
+		}
+
+		&--list-mobile {
+			@include mobile {
+				display: block !important;
+				padding-right: 0;
+			}
+
+			.list-col {
+				max-width: 100%;
+				padding: 40px 0 40px 22px;
+				background: #F3F3F3;
+
+				&__elem {
+					max-width: 300px;
+					margin-bottom: 37px !important;
+					color: #000;
+
+					&:last-child {
+						margin-bottom: 0 !important;
+					}
+				}
+			}
+		}
 	}
 
 	.top-row {
 		margin-bottom: 160px;
+
+		@include mobile {
+			margin-bottom: 36px;
+		}
 	}
 
 	.bottom-row {
 		justify-content: space-between;
 		align-items: flex-end;
+
+		@include mobile {
+			flex-direction: column-reverse;
+			align-items: flex-start;
+		}
 	}
 
 	.text-col {
@@ -39,11 +78,26 @@
 			margin-bottom: 0;
 			font-size: 20px;
 			line-height: 25px;
+
+			@include mobile {
+				font-size: 14px;
+				line-height: 18px;
+			}
 		}
 	}
 
 	.list-col {
 		max-width: 300px;
+
+		@include mobile {
+			display: none;
+		}
+
+		&--mobile {
+			@include mobile {
+				display: block !important;
+			}
+		}
 
 		&__elem {
 			display: flex;
@@ -75,6 +129,10 @@
 	}
 
 	.phone-col {
+		@include mobile {
+			margin-bottom: 163px;
+		}
+
 		a {
 			display: inline-block;
 			padding-bottom: 7px;
@@ -83,6 +141,11 @@
 			text-decoration: none;
 			box-shadow: 0 .5px 0 #fff;
 			transition: box-shadow 0.2s;
+
+			@include mobile {
+				font-size: 14px;
+				line-height: 18px;
+			}
 
 			&:hover {
 				box-shadow: none;

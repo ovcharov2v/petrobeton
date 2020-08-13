@@ -1,6 +1,9 @@
 .section--product {
 	h1 {
 		margin-bottom: 46px;
+		@include mobile {
+			margin-bottom: 17px;
+		}
 	}
 
 	.col {
@@ -12,6 +15,14 @@
 		margin: 0;
 		margin-bottom: 150px;
 
+		@include tablet {
+			flex-direction: column;
+		}
+
+		@include mobile {
+			margin-bottom: 88px;
+		}
+
 		.col {
 			padding: 0;
 		}
@@ -19,6 +30,10 @@
 		.img-col {
 			position: relative;
 			z-index: 10;
+
+			@include mobile {
+				max-width: 100%;
+			}
 
 			img {
 				width: 100%;
@@ -32,6 +47,22 @@
 			z-index: 1;
 			transform: translatey(35px);
 
+			@media screen and (max-width: 1300px) {
+				padding: 65px 66px 79px 90px;
+			}
+
+			@include tablet {
+				max-width: 100%;
+				margin-top: -117px;
+				padding-top: 182px;
+				padding: 182px 55px 79px 55px;
+				transform: none;
+			}
+
+			@include mobile {
+				padding: 135px 0 45px 0;
+			}
+
 			&::before {
 				position: absolute;
 				top: 0;
@@ -41,6 +72,12 @@
 				background: #F3F3F3;
 				content: '';
 				transform: translateX(-100%);
+				z-index: -1;
+
+				@include tablet {
+					width: calc(100% + 40px);
+					transform: translateX(-20px)
+				}
 			}
 
 			h2 {
@@ -73,12 +110,14 @@
 					width: 25px;
 					height: 30px;
 					background-image: url('../images/product/icon_doc.svg');
+
+					@include mobile {
+						content: none;
+					}
 				}
 
 				p {
 					margin-bottom: 10px;
-					font-size: 16px;
-					line-height: 20px;
 				}
 			}
 
@@ -88,6 +127,14 @@
 					width: 22px;
 					height: 22px;
 					background-image: url('../images/product/icon_params.svg');
+
+					@include mobile {
+						content: none;
+					}
+				}
+
+				h2 {
+					margin-bottom: 37px;
 				}
 
 				ul {
@@ -95,16 +142,17 @@
 					padding: 0;
 
 					li {
+						margin-bottom: 37px;
 						list-style-type: none;
-						font-size: 16px;
-						line-height: 49px;
+
+						@include mobile {
+							margin-bottom: 26px;
+						}
 					}
 				}
 			}
 
 			.get-3d {
-				font-size: 16px;
-				line-height: 20px;
 				color: #000;
 				text-decoration: underline;
 
@@ -114,14 +162,18 @@
 
 				&-wrapper {
 					margin-bottom: 51px;
+
+					@include mobile {
+						margin-bottom: 24px;
+					}
 				}
 			}
 
 			.price {
-                display: inline-block;
-                padding: 11px 15px;
-                min-width: 247px;
-                margin-bottom: 0;
+				display: inline-block;
+				padding: 11px 15px;
+				min-width: 247px;
+				margin-bottom: 0;
 				background: #DEDEDE;
 				font-size: 30px;
 				line-height: 38px;
@@ -130,20 +182,55 @@
 		}
 	}
 
+	.info-wrapper {
+		position: relative;
+		z-index: 1;
 
+		&::before {
+			position: absolute;
+			top: 0;
+			right: -20px;
+			width: 45%;
+			height: 100vh;
+			border: 30px solid rgba(#C4C4C4, 0.2);
+			border-right: 0;
+			z-index: -1;
+
+			@include mobile {
+				content: '';
+			}
+		}
+
+	}
 
 	.text-block {
 		margin-bottom: 65px;
 
+		@include mobile {
+			margin-bottom: 25px;
+		}
+
+		.row {
+			flex-wrap: wrap;
+		}
+
 		.col {
 			width: 100%;
 			max-width: 50%;
+
+			@include mobile {
+				max-width: 100%;
+			}
 		}
 
 		h2 {
 			margin-bottom: 20px;
 			font-size: 26px;
 			line-height: 22px;
+
+			@include mobile {
+				margin-bottom: 25px;
+			}
 		}
 
 		p {
@@ -162,14 +249,23 @@
 			max-width: calc(100% / 3);
 			margin-bottom: 40px;
 			padding: 0 20px;
+
+			@media screen and (max-width: 900px) {
+				max-width: 50%;
+			}
+
+			@include mobile {
+				max-width: 100%;
+				margin-bottom: 30px;
+			}
 		}
 
 		&__elem {
-			display: inline-block;
+			display: block;
 
 			a {
 				img {
-					max-width: 100%;
+					width: 100%;
 				}
 			}
 		}

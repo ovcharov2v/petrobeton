@@ -3,24 +3,44 @@
 	padding-top: calc(78px + 77px);
 	padding-bottom: calc(67px + 100px);
 
+	@include mobile {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		padding-top: 47px;
+		padding-bottom: 90px;
+	}
+
+
 	&::before {
 		position: absolute;
 		top: 78px;
-		left: 0;
-		width: 62%;
+		right: 50%;
+		width: 100vw;
 		height: calc(100% - 145px);
 		background: #C4C4C4;
 		opacity: 0.2;
 		content: '';
+		transform: translateX(150px);
+
+		@include mobile {
+			top: 0;
+			height: 100%;
+			right: 20px;
+			transform: none;
+		}
 	}
 
 	.container {
 		position: relative;
 
+		@include mobile {
+			padding-right: 0;
+		}
+
 		&::before {
 			position: absolute;
 			top: -105px;
-			left: -56px;
+			left: -36px;
 			width: 16px;
 			height: 36px;
 			background-image: url('../images/index/instagram/marker.svg');
@@ -28,11 +48,20 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			content: '';
+
+			@media screen and(max-width: 1400px) {
+				content: none;
+			}
+
 		}
 	}
 
 	h2 {
 		margin-bottom: 45px;
+
+		@include mobile {
+			padding-right: 40px;
+		}
 	}
 
 	.instagram {
@@ -68,6 +97,10 @@
 					z-index: 1;
 					opacity: 0;
 					transition: opacity 0.2s;
+
+					@include tablet {
+						content: none;
+					}
 				}
 
 				&::after {
@@ -81,6 +114,10 @@
 					z-index: 1;
 					opacity: 0;
 					transition: opacity 0.2s;
+
+					@include tablet {
+						content: none;
+					}
 				}
 
 				&:hover {
@@ -93,6 +130,11 @@
 					img {
 						opacity: 0.4;
 						filter: blur(5px);
+
+						@include tablet {
+							opacity: 1;
+							filter: none;
+						}
 					}
 				}
 			}
@@ -110,6 +152,12 @@
 					display: none;
 				}
 			}
+		}
+	}
+
+	.swiper-nav {
+		@include mobile {
+			display: none;
 		}
 	}
 }
