@@ -99,6 +99,7 @@ window.onload = function () {
 			nextEl: '.section--catalog-individual .swiper-next',
 			prevEl: '.section--catalog-individual .swiper-prev',
 		},
+		persenPosition: true,
 		breakpoints: {
 			0: {
 				slidesPerView: 1.2,
@@ -126,18 +127,56 @@ window.onload = function () {
 				centeredSlides: false,
 			},
 		  }
-	})
+	})	
 
 	function catIndividualSlider_setSlide() {
 		if(window.innerWidth <= 1024 && catIndividualSlider.activeIndex == 0) {
 			catIndividualSlider.slideTo(1)
 		}
 	}
+
 	catIndividualSlider_setSlide()
 
 	window.addEventListener("resize", function() {
 		catIndividualSlider_setSlide()
 	}, false);
+
+	//Управление
+	const swiperRange = document.querySelector('.section--catalog-individual input[type="range"]')
+	if(swiperRange)
+	rangeSlider.create(swiperRange, {
+		polyfill: true,
+		root: document,
+		rangeClass: 'rangeSlider',
+		disabledClass: 'rangeSlider--disabled',
+		fillClass: 'rangeSlider__fill',
+		bufferClass: 'rangeSlider__buffer',
+		handleClass: 'rangeSlider__handle',
+		startEvent: ['mousedown', 'touchstart', 'pointerdown'],
+		moveEvent: ['mousemove', 'touchmove', 'pointermove'],
+		endEvent: ['mouseup', 'touchend', 'pointerup'],		
+		min: 0,
+		max: document.querySelectorAll('.section--catalog-individual .swiper-container .swiper-slide').length - 4, 
+		step: 0.01,
+		value: 0, 
+		onSlideStart: function (position, value) {
+			document.querySelector('.section--catalog-individual .rangeSlider').classList.add('active')
+		},
+		onSlide: function (position, value) {			
+			catIndividualSlider.slideTo(position)			
+		},		
+		onSlideEnd: function (position, value) {
+			document.querySelector('.section--catalog-individual .rangeSlider').classList.remove('active')
+		},
+	});
+
+	catIndividualSlider.on('slideChange', function () {
+		if(!document.querySelector('.section--catalog-individual .rangeSlider').classList.contains('active')) {
+			swiperRange.rangeSlider.update({			
+				value : catIndividualSlider.activeIndex,
+			}, false);
+		}		
+	});
 
 
 	//Слайдер в блоке Инстаграм виджет
@@ -211,9 +250,7 @@ window.onload = function () {
 	})
 
 
-	/**
-	 * Галереи
-	 */
+	//Галереи
 	const galleries = document.querySelectorAll('.gallery')
 
 	galleries.forEach(function (gallery) {
@@ -262,17 +299,31 @@ window.onload = function () {
 	})
 
 	//Ховер на элементах меню
-	const menuLinks = document.querySelectorAll('#main-menu a')
-	const menuLinkActive = document.querySelector('#main-menu .active a')
+	const mainMenu = document.querySelector('.header__nav ul');
+	const mainMenuActiveLink = document.querySelector('.header__nav .active a span');
+	const mainMenuLinks = document.querySelectorAll('.header__nav a');
+	const activeLine = document.querySelector('.header__nav .line')
 
-	menuLinks.forEach(function(link) {
-		link.addEventListener('mouseenter', function() {
-			menuLinkActive.classList.add('disabled')
-		});
-		link.addEventListener('mouseleave', function() {
-			menuLinkActive.classList.remove('disabled')
-		});
+	function returnToActivePosition() {
+		activeLine.style.transform = "translate("+(mainMenuActiveLink.getBoundingClientRect().left - mainMenu.getBoundingClientRect().left)+"px, 0)"
+		activeLine.style.width = mainMenuActiveLink.getBoundingClientRect().width+"px"
+	}
+
+	mainMenuLinks.forEach(function(link) {
+		link.addEventListener('mouseenter', function(event){
+			activeLine.style.transform = "translate("+(event.target.querySelector('span').getBoundingClientRect().left - mainMenu.getBoundingClientRect().left)+"px, 0)"
+			activeLine.style.width = event.target.querySelector('span').getBoundingClientRect().width+"px"
+		})
+		link.addEventListener('mouseleave', function(event){
+			returnToActivePosition()			
+		})
 	})
-	
 
+	returnToActivePosition()
+
+	mainMenu.classList.add('active-line')
+
+	window.addEventListener("resize", function() {
+		returnToActivePosition()
+	}, false);
 };

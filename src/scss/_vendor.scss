@@ -1,10 +1,10 @@
 @import "../../node_modules/normalize.css/normalize";
 
-@import "../../node_modules/mmenu-light/src/mmenu-light.scss";
-
 @import "../../node_modules/swiper/swiper-bundle";
 
 $lg-path-fonts: '../fonts/lightgallery/';
 $lg-path-images: '../images/common/lightgallery';
 $lg-toolbar-bg: rgba(0,0,0,0);
 @import "../../node_modules/lightgallery.js/src/sass/lightgallery.scss";
+
+@import "../../node_modules/rangeslider-pure/src/range-slider";

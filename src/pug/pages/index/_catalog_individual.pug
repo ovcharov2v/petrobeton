@@ -16,6 +16,5 @@ section.section.section--catalog-individual
                             img(src="images/index/catalog_individual/img"+(n+1)+"_thumb.jpg", alt="", loading="lazy")
                         p #{titles[n]}
                     - n++
-        .swiper-nav
-            button.swiper-prev
-            button.swiper-next
+        .slider-range
+            input(type="range", min="0", step="1", value="0")       

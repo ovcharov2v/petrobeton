@@ -55,9 +55,11 @@
 		"yargs": "13.2.2"
 	},
 	"dependencies": {
+		"@babel/polyfill": "7.10.4",
 		"lg-video.js": "1.2.0",
 		"lightgallery.js": "1.2.0",
 		"normalize.css": "8.0.1",
+		"rangeslider-pure": "0.4.11",
 		"swiper": "6.1.1"
 	}
 }
