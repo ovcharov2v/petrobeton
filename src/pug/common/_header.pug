@@ -9,20 +9,20 @@ header.header(class="header--"+headerStyle)
                     | Доставка и монтаж по России
             nav#main-menu.header__nav.col(role="navigation")
                 ul
-                    li(class=(menuCurrent === "index" ? "active" : undefined))
+                    li(class=(menuCurrent === "index" ? "current-menu-item" : undefined))
                         a(href="text.html") 
                             span ЧТО ТАКОЕ БЕТОН
                     li
-                        a(href="#") 
+                        a(href="text.html") 
                             span ЭКСПЛУАТАЦИЯ
-                    li(class=(menuCurrent === "catalog" ? "active" : undefined))
+                    li(class=(menuCurrent === "catalog" ? "current-menu-item" : undefined))
                         a(href="catalog.html") 
                             span КАТАЛОГ ИЗДЕЛИЙ
                     li
-                        a(href="#") 
+                        a(href="text.html") 
                             span ОПЛАТА И ДОСТАВКА
-                    li
-                        a(href="#") 
+                    li(class=(menuCurrent === "contacts" ? "current-menu-item" : undefined))
+                        a(href="contacts.html") 
                             span КОНТАКТЫ
                 .line
             .burger-col.col.d-none

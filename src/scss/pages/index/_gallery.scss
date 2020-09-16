@@ -123,7 +123,7 @@
 			padding-right: 0;
 		}
 
-		h2 {
+		.h2-wrap {
 			@include mobile {
 				display: block !important;
 				margin-bottom: 20px;

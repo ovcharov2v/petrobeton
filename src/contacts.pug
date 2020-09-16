@@ -1,0 +1,14 @@
+extends pug/base
+
+append vars
+    -
+        var title = "Контакты"
+        meta.description = "Страница каталог"
+        meta.keywords = "Ключевые слова"
+        var headerStyle = "dark"
+        var menuCurrent = "contacts"
+
+block content
+    include pug/pages/contacts/_breadcrumbs.pug
+    include pug/pages/contacts/_contacts.pug
+    include pug/pages/index/_get_price.pug

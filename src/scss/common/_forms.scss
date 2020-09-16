@@ -78,7 +78,6 @@
 
 
 .form {
-
 	input[type="text"],
 	input[type="email"],
 	input[type="tel"] {
@@ -106,5 +105,18 @@
 		&::placeholder {
 			color: rgba(#080808, 0.5);
 		}
+
+		&.wpcf7-not-valid {
+			border-color: red;
+			background: rgba(red, 0.2);
+		}
+	}	
+
+	p {
+		margin: 0;
+	}
+
+	.wpcf7-not-valid-tip, .wpcf7-response-output {
+		display: none !important;
 	}
 }

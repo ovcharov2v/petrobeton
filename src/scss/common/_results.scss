@@ -46,23 +46,22 @@
 				margin-top: 0;
 				padding-left: 0;
 			}
+			span {
+				display: block;
+				font-size: 100px;
+				font-weight: 100;
+				line-height: 126px;
+
+				@include mobile {
+					font-size: 80px;
+					line-height: 70px;
+				}
+			}
 
 			p {
 				margin-bottom: 0;
 				font-size: 20px;
-				line-height: 25px;
-
-				span {
-					display: block;
-					font-size: 100px;
-					font-weight: 100;
-					line-height: 126px;
-
-					@include mobile {
-						font-size: 80px;
-						line-height: 70px;
-					}
-				}
+				line-height: 25px;			
 
 				br {
 					@media screen and (max-width:550px) {

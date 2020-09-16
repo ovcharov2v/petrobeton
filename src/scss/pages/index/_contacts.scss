@@ -58,6 +58,15 @@
 			@include tablet {
 				margin-bottom: 27px;
 			}
+
+			a {
+				color: #000;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 
@@ -72,6 +81,14 @@
 		#map {
 			height: 502px;
 			background: #F3F3F3;
+		}
+	}
+
+	&-contacts {
+		.container {
+			&::before {
+				content: none;
+			}
 		}
 	}
 }

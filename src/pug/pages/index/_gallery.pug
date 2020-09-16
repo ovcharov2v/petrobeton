@@ -1,3 +1,4 @@
+//Блок Галерея
 section.section.section--gallery
     .container
         .row
@@ -17,9 +18,10 @@ section.section.section--gallery
                                 img(src="images/index/gallery/img"+(n+1)+"_nav.jpg", alt="", loading="lazy")                                
                             - n++
             .slider-col.col
-                h2.d-none Фото и видео 
-                    br
-                    | галерея
+                .h2-wrap.d-none
+                    h2 Фото и видео 
+                        br
+                        | галерея
                 .gallery-slider.swiper-container
                     .swiper-wrapper.gallery
                         - var n = 0;  

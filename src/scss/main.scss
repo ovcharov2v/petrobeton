@@ -89,6 +89,10 @@ p {
 	display: none !important;
 }
 
+.overflow-hidden {
+	overflow: hidden !important;
+}
+
 
 //Common
 @import "common/header";
@@ -98,6 +102,7 @@ p {
 @import "common/swiper";
 @import "common/gallery";
 @import "common/results";
+@import "common/modals";
 
 //Index
 @import "pages/index/intro";

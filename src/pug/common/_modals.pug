@@ -1,0 +1,41 @@
+//Модальное окно Оформить заказ
+#modal-order.modal.micromodal-slide(aria-hidden="true")
+    .modal__overlay(tabindex="-1" data-micromodal-close="")
+        .modal__container(role="dialog")
+            header.modal__header                
+                p.modal__title Оформить заказ
+                button.modal__close(aria-label="Close modal" data-micromodal-close="")
+            main.modal__content
+                p.subtitle Укажите ваши данные и наш менеджер перезвонит вам в ближашее время
+                form.form(action="")
+                    input(type="text" placeholder="Ваше имя")
+                    input(type="tel" placeholder="+7 999 999 99 99")
+                    button(type="submit").button.button--dark Отправить
+
+//Модальное окно Прислать каталог
+#modal-catalog.modal.micromodal-slide(aria-hidden="true")
+    .modal__overlay(tabindex="-1" data-micromodal-close="")
+        .modal__container(role="dialog")
+            header.modal__header                
+                p.modal__title Кому прислать каталог?
+                button.modal__close(aria-label="Close modal" data-micromodal-close="")
+            main.modal__content
+                p.subtitle Укажите ваши данные и мы вышлем вам каталог в ближашее время
+                form.form(action="")
+                    input(type="text" placeholder="Ваше имя")
+                    input(type="tel" placeholder="+7 999 999 99 99")
+                    button(type="submit").button.button--dark Отправить
+
+//Модальное окно успешной отправки сообщения
+#modal-success.modal.micromodal-slide(aria-hidden="true")
+    .modal__overlay(tabindex="-1" data-micromodal-close="")
+        .modal__container(role="dialog")
+            header.modal__header                
+                p.modal__title Успешно!
+                button.modal__close(aria-label="Close modal" data-micromodal-close="")
+            main.modal__content.modal__content--success
+                p Ваше сообщение успешно отправлено!
+                    br
+                    small Мы свяжемся с вами в ближайшее время.
+                button.button.button--dark(data-micromodal-close="") Ок
+
